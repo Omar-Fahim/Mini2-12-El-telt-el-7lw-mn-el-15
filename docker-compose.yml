@@ -1,0 +1,55 @@
+services:
+#  APPS
+  server:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      Instance: "server"
+      spring.data.mongodb.uri: mongodb://root:example@mongo:27017/madamnofe5a?authSource=admin
+      spring.data.mongodb.database: madamnofe5a
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/madamnofe5a
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+    restart: always
+    depends_on:
+      - mongo
+      - postgres
+
+# MongoDB
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    # volumes:
+    #   - ~/mongodata:/data/db
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "9000:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_BASICAUTH: false
+    depends_on:
+      - mongo
+
+# Postgres
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: madamnofe5a
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    restart: always
+    # volumes:
+    #   - ~/pgdata2:/var/lib/postgresql/data
