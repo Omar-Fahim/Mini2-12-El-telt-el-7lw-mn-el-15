@@ -5,6 +5,7 @@ import com.example.Mini_App.services.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -42,6 +43,11 @@ public class TripController {
     public String deleteTrip(@PathVariable Long id){
         tripService.deleteTrip(id);
         return "Trip deleted successfully";
+    }
+
+    @GetMapping("/findByDateRange")
+    public List<Trip> findTripsWithinDateRange(@RequestParam LocalDateTime startDate, @RequestParam LocalDateTime endDate){
+        return tripService.findTripsWithinDateRange(startDate, endDate);
     }
 
 
