@@ -18,10 +18,10 @@ public class Captain {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID;
-    private String Name;
-    private String LicenseNumber;
-    private Double AvgRatingScore;
+    private Long id;
+    private String name;
+    private String licenseNumber;
+    private Double avgRatingScore;
 
     @OneToMany(mappedBy = "captain")
     @JsonIgnore
@@ -31,41 +31,41 @@ public class Captain {
         this.trips = new ArrayList<>();
     }
     public Captain(String name, String licenseNumber, Double avgRatingScore) {
-        this.Name = name;
-        this.LicenseNumber = licenseNumber;
-        this.AvgRatingScore = avgRatingScore;
+        this.name = name;
+        this.licenseNumber = licenseNumber;
+        this.avgRatingScore = avgRatingScore;
         this.trips = new ArrayList<>();
     }
-    public Captain(Long ID, String name, String licenseNumber, Double avgRatingScore) {
-        this.ID = ID;
-        this.Name = name;
-        this.LicenseNumber = licenseNumber;
-        this.AvgRatingScore = avgRatingScore;
+    public Captain(Long id, String name, String licenseNumber, Double avgRatingScore) {
+        this.id = id;
+        this.name = name;
+        this.licenseNumber = licenseNumber;
+        this.avgRatingScore = avgRatingScore;
         this.trips = new ArrayList<>();
     }
-    public Long getID() {
-        return ID;
+    public Long getId() {
+        return this.id;
     }
-    public void setID(Long iD) {
-        ID = iD;
+    public void setId(Long id) {
+        this.id = id;
     }
     public String getName() {
-        return Name;
+        return this.name;
     }
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
     public String getLicenseNumber() {
-        return LicenseNumber;
+        return  this.licenseNumber;
     }
     public void setLicenseNumber(String licenseNumber) {
-        LicenseNumber = licenseNumber;
+        this.licenseNumber = licenseNumber;
     }
     public Double getAvgRatingScore() {
-        return AvgRatingScore;
+        return  this.avgRatingScore;
     }
     public void setAvgRatingScore(Double avgRatingScore) {
-        AvgRatingScore = avgRatingScore;
+        this.avgRatingScore = avgRatingScore;
     }
     public List<Trip> getTrips() {
         return trips;
