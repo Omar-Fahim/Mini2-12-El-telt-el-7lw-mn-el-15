@@ -13,68 +13,68 @@ public class Trip {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long ID;
+    Long id;
 
-    LocalDateTime TripDate;
-    String Origin;
-    String Destination;
-    Double TripCost;
+    LocalDateTime tripDate;
+    String origin;
+    String destination;
+    Double tripCost;
 
     public Trip() {
     }
 
     public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost) {
-        TripDate = tripDate;
-        Origin = origin;
-        Destination = destination;
-        TripCost = tripCost;
+        this.tripDate = tripDate;
+        this.origin = origin;
+        this.destination = destination;
+        this.tripCost = tripCost;
     }
 
     public Trip(Long ID, LocalDateTime tripDate, String origin, String destination, Double tripCost) {
-        this.ID = ID;
-        TripDate = tripDate;
-        Origin = origin;
-        Destination = destination;
-        TripCost = tripCost;
+        this.id = ID;
+        this.tripDate = tripDate;
+        this.origin = origin;
+        this.destination = destination;
+        this.tripCost = tripCost;
     }
 
-    public Long getID() {
-        return ID;
+    public Long getId() {
+        return id;
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public LocalDateTime getTripDate() {
-        return TripDate;
+        return tripDate;
     }
 
     public void setTripDate(LocalDateTime tripDate) {
-        TripDate = tripDate;
+        this.tripDate = tripDate;
     }
 
     public String getOrigin() {
-        return Origin;
+        return origin;
     }
 
     public void setOrigin(String origin) {
-        Origin = origin;
+        this.origin = origin;
     }
 
     public String getDestination() {
-        return Destination;
+        return destination;
     }
 
     public void setDestination(String destination) {
-        Destination = destination;
+        this.destination = destination;
     }
 
     public Double getTripCost() {
-        return TripCost;
+        return tripCost;
     }
 
     public void setTripCost(Double tripCost) {
-        TripCost = tripCost;
+        this.tripCost = tripCost;
     }
 }
