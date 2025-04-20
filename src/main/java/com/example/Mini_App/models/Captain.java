@@ -23,7 +23,7 @@ public class Captain {
     private String licenseNumber;
     private Double avgRatingScore;
 
-    @OneToMany(mappedBy = "captain")
+    @OneToMany(mappedBy = "captains")
     @JsonIgnore
     private List<Trip> trips;
 
