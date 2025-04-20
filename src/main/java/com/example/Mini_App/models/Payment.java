@@ -3,7 +3,7 @@ package com.example.Mini_App.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "payment")
+@Table(name = "payments")
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,6 +12,19 @@ public class Payment {
     private String paymentMethod;
     private Boolean paymentStatus;
 
+    public Payment() {
+    }
+    public Payment(Long ID, Double amount, String paymentMethod, Boolean paymentStatus) {
+        this.ID = ID;
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
+        this.paymentStatus = paymentStatus;
+    }
+    public Payment(Double amount, String paymentMethod, Boolean paymentStatus) {
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
+        this.paymentStatus = paymentStatus;
+    }
     public String getPaymentMethod() {
         return paymentMethod;
     }

@@ -27,10 +27,12 @@ public class PaymentService {
     public Payment getPaymentById(Long id){
         return paymentRepository.findById(id).orElse(null);
     }
-    public Payment updatePayment(Long id, Payment payment){
+    public Payment updatePayment(Long id, Payment payment) {
         Payment existingPayment = paymentRepository.findById(id).orElse(null);
         if (existingPayment != null) {
             existingPayment = payment;
+
+            return paymentRepository.save(existingPayment);
         }
         return null;
     }
