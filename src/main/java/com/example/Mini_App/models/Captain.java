@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "captain")
+@Table(name = "captains")
 public class Captain {
 
     @Id
@@ -23,7 +23,7 @@ public class Captain {
     private String licenseNumber;
     private Double avgRatingScore;
 
-    @OneToMany(mappedBy = "captains")
+    @OneToMany(mappedBy = "captain")
     @JsonIgnore
     private List<Trip> trips;
 
