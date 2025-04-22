@@ -19,29 +19,36 @@ public class Trip {
     Double tripCost;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "captain_id" , referencedColumnName = "id")
+    Captain captain;
+
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id" , referencedColumnName = "id")
     Customer customer;
+
+
 
     public Trip() {
     }
 
-    public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost, Customer customer) {
+    public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost, Captain captain, Customer customer) {
         this.tripDate = tripDate;
         this.origin = origin;
         this.destination = destination;
         this.tripCost = tripCost;
+        this.captain = captain;
         this.customer = customer;
     }
 
-    public Trip(Long id, LocalDateTime tripDate, String origin, String destination, Double tripCost, Customer customer) {
+    public Trip(Long id, LocalDateTime tripDate, String origin, String destination, Double tripCost, Captain captain, Customer customer) {
         this.id = id;
         this.tripDate = tripDate;
         this.origin = origin;
         this.destination = destination;
         this.tripCost = tripCost;
+        this.captain = captain;
         this.customer = customer;
     }
-
 
     public Long getId() {
         return id;
