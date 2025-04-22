@@ -1,9 +1,6 @@
 package com.example.Mini_App.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -20,23 +17,30 @@ public class Trip {
     String destination;
     Double tripCost;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id" , referencedColumnName = "id")
+    Customer customer;
+
     public Trip() {
     }
 
-    public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost) {
+    public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost, Customer customer) {
         this.tripDate = tripDate;
         this.origin = origin;
         this.destination = destination;
         this.tripCost = tripCost;
+        this.customer = customer;
     }
 
-    public Trip(Long ID, LocalDateTime tripDate, String origin, String destination, Double tripCost) {
-        this.id = ID;
+    public Trip(Long id, LocalDateTime tripDate, String origin, String destination, Double tripCost, Customer customer) {
+        this.id = id;
         this.tripDate = tripDate;
         this.origin = origin;
         this.destination = destination;
         this.tripCost = tripCost;
+        this.customer = customer;
     }
+
 
     public Long getId() {
         return id;
