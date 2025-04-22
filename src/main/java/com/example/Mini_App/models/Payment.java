@@ -12,6 +12,12 @@ public class Payment {
     private String paymentMethod;
     private Boolean paymentStatus;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "trip_id")
+    Trip trip;
+
+
+
     public Payment() {
     }
     public Payment(Long ID, Double amount, String paymentMethod, Boolean paymentStatus) {
