@@ -46,6 +46,10 @@ public class TripService {
         return tripRepository.findTripsWithinDateRange(startDate,endDate);
     }
 
+    public List<Trip> findTripsByCaptainId(Long captainId){
+        return tripRepository.findByCaptainId(captainId);
+    }
+
 
 
 }

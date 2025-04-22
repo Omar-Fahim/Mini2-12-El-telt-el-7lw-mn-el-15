@@ -50,6 +50,12 @@ public class TripController {
         return tripService.findTripsWithinDateRange(startDate, endDate);
     }
 
+    @GetMapping("/findByCaptainId")
+    public List<Trip> findTripsByCaptainId(@RequestParam Long captainId){
+        return tripService.findTripsByCaptainId(captainId);
+    }
+
+
 
 
 

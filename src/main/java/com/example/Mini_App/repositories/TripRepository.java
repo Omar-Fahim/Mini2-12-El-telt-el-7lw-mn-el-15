@@ -15,4 +15,7 @@ public interface TripRepository extends JpaRepository< Trip , Long> {
     @Query(value = "SELECT t.* FROM trip t WHERE t.trip_date >= :startDate AND t.trip_date <= :endDate" , nativeQuery = true)
     public List<Trip> findTripsWithinDateRange(@Param("startDate") LocalDateTime startDate ,@Param("endDate") LocalDateTime endDate);
 
+
+    List<Trip> findByCaptainId(Long id);
+
 }
