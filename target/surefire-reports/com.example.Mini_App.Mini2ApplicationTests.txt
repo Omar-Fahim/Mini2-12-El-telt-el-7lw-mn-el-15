@@ -1,0 +1,116 @@
+-------------------------------------------------------------------------------
+Test set: com.example.Mini_App.Mini2ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 9.360 s <<< FAILURE! -- in com.example.Mini_App.Mini2ApplicationTests
+com.example.Mini_App.Mini2ApplicationTests.testControllerAddCustomer -- Time elapsed: 0.894 s <<< ERROR!
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500  on POST request for "http://localhost:8080/customer/addCustomer": "{"timestamp":"2025-04-20T15:51:52.937+00:00","status":500,"error":"Internal Server Error","path":"/customer/addCustomer"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:549)
+	at com.example.Mini_App.Mini2ApplicationTests.testControllerAddCustomer(Mini2ApplicationTests.java:218)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.Mini_App.Mini2ApplicationTests.testControllerFindCustomersByEmailDomain -- Time elapsed: 0.167 s <<< ERROR!
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500  on GET request for "http://localhost:8080/customer/findByEmailDomain": "{"timestamp":"2025-04-20T15:51:53.142+00:00","status":500,"error":"Internal Server Error","path":"/customer/findByEmailDomain"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:442)
+	at com.example.Mini_App.Mini2ApplicationTests.testControllerFindCustomersByEmailDomain(Mini2ApplicationTests.java:297)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.Mini_App.Mini2ApplicationTests.testControllerGetAllCustomers -- Time elapsed: 0.057 s <<< ERROR!
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500  on GET request for "http://localhost:8080/customer/allCustomers": "{"timestamp":"2025-04-20T15:51:53.203+00:00","status":500,"error":"Internal Server Error","path":"/customer/allCustomers"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:442)
+	at com.example.Mini_App.Mini2ApplicationTests.testControllerGetAllCustomers(Mini2ApplicationTests.java:226)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.Mini_App.Mini2ApplicationTests.testControllerDeleteCustomer -- Time elapsed: 0.070 s <<< ERROR!
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500  on DELETE request for "http://localhost:8080/customer/delete/1": "{"timestamp":"2025-04-20T15:51:53.341+00:00","status":500,"error":"Internal Server Error","path":"/customer/delete/1"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at com.example.Mini_App.Mini2ApplicationTests.testControllerDeleteCustomer(Mini2ApplicationTests.java:270)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.Mini_App.Mini2ApplicationTests.testControllerDeleteNonExistingCustomer -- Time elapsed: 0.061 s <<< ERROR!
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500  on DELETE request for "http://localhost:8080/customer/delete/1": "{"timestamp":"2025-04-20T15:51:53.405+00:00","status":500,"error":"Internal Server Error","path":"/customer/delete/1"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at com.example.Mini_App.Mini2ApplicationTests.testControllerDeleteNonExistingCustomer(Mini2ApplicationTests.java:282)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.Mini_App.Mini2ApplicationTests.testControllerFindCustomersByPhonePrefix -- Time elapsed: 0.091 s <<< ERROR!
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500  on GET request for "http://localhost:8080/customer/findByPhonePrefix": "{"timestamp":"2025-04-20T15:51:53.760+00:00","status":500,"error":"Internal Server Error","path":"/customer/findByPhonePrefix"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:442)
+	at com.example.Mini_App.Mini2ApplicationTests.testControllerFindCustomersByPhonePrefix(Mini2ApplicationTests.java:312)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.Mini_App.Mini2ApplicationTests.testControllerGetCustomerById -- Time elapsed: 0.064 s <<< ERROR!
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500  on GET request for "http://localhost:8080/customer/1": "{"timestamp":"2025-04-20T15:51:53.879+00:00","status":500,"error":"Internal Server Error","path":"/customer/1"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:442)
+	at com.example.Mini_App.Mini2ApplicationTests.testControllerGetCustomerById(Mini2ApplicationTests.java:236)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.Mini_App.Mini2ApplicationTests.testControllerUpdateCustomer -- Time elapsed: 0.064 s <<< ERROR!
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500  on PUT request for "http://localhost:8080/customer/update/1": "{"timestamp":"2025-04-20T15:51:53.946+00:00","status":500,"error":"Internal Server Error","path":"/customer/update/1"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:102)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:189)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at com.example.Mini_App.Mini2ApplicationTests.testControllerUpdateCustomer(Mini2ApplicationTests.java:253)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
