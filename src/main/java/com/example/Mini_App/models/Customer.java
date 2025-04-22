@@ -1,5 +1,6 @@
 package com.example.Mini_App.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class Customer {
     String name;
     String email;
     String phoneNumber;
+    @JsonIgnore
     @OneToMany(mappedBy = "customer")
     ArrayList<Trip> trips;
     public Customer() {
