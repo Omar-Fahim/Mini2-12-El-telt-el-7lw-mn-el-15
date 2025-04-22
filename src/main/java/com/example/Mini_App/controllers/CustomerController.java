@@ -56,8 +56,4 @@ public class CustomerController {
         return customerService.findCustomersByPhonePrefix(prefix);
     }
 
-
-
-
-
 }

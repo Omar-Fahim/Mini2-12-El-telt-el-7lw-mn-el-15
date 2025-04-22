@@ -2,9 +2,11 @@ package com.example.Mini_App.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
-@Table(name = "customer")
+@Table(name = "customers")
 @Entity
 public class Customer {
     @Id
@@ -13,7 +15,8 @@ public class Customer {
     String name;
     String email;
     String phoneNumber;
-
+    @OneToMany(mappedBy = "customer")
+    ArrayList<Trip> trips;
     public Customer() {
     }
 
@@ -23,6 +26,7 @@ public class Customer {
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        trips=new ArrayList<Trip>();
     }
 
     public Long getId() {

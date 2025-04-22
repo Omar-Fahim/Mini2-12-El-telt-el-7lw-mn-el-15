@@ -1,5 +1,6 @@
 com\example\Mini_App\repositories\TripRepository.class
 com\example\Mini_App\services\RatingService.class
+com\example\Mini_App\config\Config.class
 com\example\Mini_App\services\PaymentService.class
 com\example\Mini_App\controllers\CaptainController.class
 com\example\Mini_App\controllers\TripController.class
