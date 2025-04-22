@@ -26,6 +26,9 @@ public class Trip {
     @JoinColumn(name = "customer_id" , referencedColumnName = "id")
     Customer customer;
 
+    @OneToOne(mappedBy = "trip")
+    Payment payment;
+
 
 
     public Trip() {
