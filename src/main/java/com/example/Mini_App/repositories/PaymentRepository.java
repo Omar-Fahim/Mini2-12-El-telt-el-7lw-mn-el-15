@@ -11,4 +11,8 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
     List<Payment> findByAmountGreaterThan(double threshold);
 
 
+
+    // Finding payments by trip ID
+    List<Payment> findByTripId(Long tripId);
+
 }

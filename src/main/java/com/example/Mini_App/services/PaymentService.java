@@ -42,5 +42,11 @@ public class PaymentService {
     public List<Payment> findByAmountThreshold(Double threshold){
         return paymentRepository.findByAmountGreaterThan(threshold);
     }
+    public List<Payment> findPaymentsByTripId(Long tripId){
+        return paymentRepository.findByTripId(tripId);
+    }
+
+
+
 
 }
