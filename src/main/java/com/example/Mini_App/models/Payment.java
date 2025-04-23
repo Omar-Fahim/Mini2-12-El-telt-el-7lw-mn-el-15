@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "payments")
 public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
@@ -12,25 +13,43 @@ public class Payment {
     private String paymentMethod;
     private Boolean paymentStatus;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "trip_id")
-    Trip trip;
+    private Trip trip;
 
 
 
     public Payment() {
+    }
+    public Payment(Long ID, Double amount, String paymentMethod, Boolean paymentStatus, Trip trip) {
+        this.ID = ID;
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
+        this.paymentStatus = paymentStatus;
+        this.trip = trip;
     }
     public Payment(Long ID, Double amount, String paymentMethod, Boolean paymentStatus) {
         this.ID = ID;
         this.amount = amount;
         this.paymentMethod = paymentMethod;
         this.paymentStatus = paymentStatus;
+
     }
-    public Payment(Double amount, String paymentMethod, Boolean paymentStatus) {
+
+    public Payment(Double amount, String paymentMethod, Boolean paymentStatus, Trip trip) {
         this.amount = amount;
         this.paymentMethod = paymentMethod;
         this.paymentStatus = paymentStatus;
+        this.trip = trip;
+
     }
+    public Payment(Double amount, String paymentMethod, Boolean paymentStatus){
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
+        this.paymentStatus = paymentStatus;
+
+    }
+
     public String getPaymentMethod() {
         return paymentMethod;
     }
@@ -61,5 +80,12 @@ public class Payment {
 
     public void setPaymentStatus(Boolean paymentStatus) {
         this.paymentStatus = paymentStatus;
+    }
+    public Trip getTrip() {
+        return trip;
+    }
+
+    public void setTrip(Trip trip) {
+        this.trip = trip;
     }
 }

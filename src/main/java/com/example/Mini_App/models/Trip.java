@@ -1,5 +1,6 @@
 package com.example.Mini_App.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -27,7 +28,8 @@ public class Trip {
     Customer customer;
 
     @OneToOne(mappedBy = "trip")
-    Payment payment;
+    @JsonIgnore
+    private Payment payment;
 
 
 
@@ -40,7 +42,6 @@ public class Trip {
         this.destination = destination;
         this.tripCost = tripCost;
     }
-
     public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost, Captain captain, Customer customer) {
         this.tripDate = tripDate;
         this.origin = origin;
@@ -48,8 +49,18 @@ public class Trip {
         this.tripCost = tripCost;
         this.captain = captain;
         this.customer = customer;
+
     }
 
+    public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost, Captain captain, Customer customer, Payment payment) {
+        this.tripDate = tripDate;
+        this.origin = origin;
+        this.destination = destination;
+        this.tripCost = tripCost;
+        this.captain = captain;
+        this.customer = customer;
+        this.payment = payment;
+    }
     public Trip(Long id, LocalDateTime tripDate, String origin, String destination, Double tripCost, Captain captain, Customer customer) {
         this.id = id;
         this.tripDate = tripDate;
@@ -58,6 +69,17 @@ public class Trip {
         this.tripCost = tripCost;
         this.captain = captain;
         this.customer = customer;
+
+    }
+    public Trip(Long id, LocalDateTime tripDate, String origin, String destination, Double tripCost, Captain captain, Customer customer, Payment payment) {
+        this.id = id;
+        this.tripDate = tripDate;
+        this.origin = origin;
+        this.destination = destination;
+        this.tripCost = tripCost;
+        this.captain = captain;
+        this.customer = customer;
+        this.payment = payment;
     }
 
     public Long getId() {
@@ -78,6 +100,30 @@ public class Trip {
 
     public String getOrigin() {
         return origin;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Captain getCaptain() {
+        return captain;
+    }
+
+    public void setCaptain(Captain captain) {
+        this.captain = captain;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
     }
 
     public void setOrigin(String origin) {
