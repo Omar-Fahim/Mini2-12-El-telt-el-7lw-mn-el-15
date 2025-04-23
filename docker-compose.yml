@@ -8,7 +8,7 @@ services:
       Instance: "server"
       spring.data.mongodb.uri: mongodb://root:example@mongo:27017/madamnofe5a?authSource=admin
       spring.data.mongodb.database: madamnofe5a
-      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/madamnofe5a
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/madamnofe5a
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: password
     restart: always
