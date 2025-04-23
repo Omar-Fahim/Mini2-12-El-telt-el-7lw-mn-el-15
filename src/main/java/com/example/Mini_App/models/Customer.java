@@ -18,7 +18,7 @@ public class Customer {
     String phoneNumber;
     @JsonIgnore
     @OneToMany(mappedBy = "customer")
-    ArrayList<Trip> trips;
+    List<Trip> trips;
     public Customer() {
     }
 

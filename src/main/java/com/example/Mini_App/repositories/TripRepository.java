@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface TripRepository extends JpaRepository< Trip , Long> {
 
-    @Query(value = "SELECT t.* FROM trip t WHERE t.trip_date >= :startDate AND t.trip_date <= :endDate" , nativeQuery = true)
+    @Query(value = "SELECT t.* FROM trips t WHERE t.trip_date >= :startDate AND t.trip_date <= :endDate" , nativeQuery = true)
     public List<Trip> findTripsWithinDateRange(@Param("startDate") LocalDateTime startDate ,@Param("endDate") LocalDateTime endDate);
 
 
