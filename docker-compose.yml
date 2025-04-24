@@ -26,8 +26,8 @@ services:
       MONGO_INITDB_DATABASE: madamnofe5a
     ports:
       - "27017:27017"
-    # volumes:
-    #   - ~/mongodata:/data/db
+    volumes:
+      - mongo_data:/data/db
 
   mongo-express:
     image: mongo-express
@@ -52,5 +52,9 @@ services:
     ports:
       - "5432:5432"
     restart: always
-    # volumes:
-    #   - ~/pgdata2:/var/lib/postgresql/data
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  mongo_data:
+  postgres_data:
